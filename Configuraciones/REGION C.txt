@@ -1,0 +1,98 @@
+PROYECTO FINAL
+
+SUCURSAL C1
+--------------------
+enable
+conf ter
+hostname C1
+interface fa 0/0
+no sh
+interface se 0/0/0
+ip address 172.10.0.1 255.255.0.0
+no sh
+interface se0/0/1
+ip address 172.20.0.1 255.255.0.0
+no sh 
+interface se0/1/0
+ip address 190.20.0.2 255.255.255.0
+no sh 
+
+router eigrp 1
+ network 90.0.0.0 0.255.255.255
+ network 172.10.0.0 0.0.255.255
+ network 172.20.0.0 0.0.255.255
+ network 190.20.0.0 0.0.0.255
+no auto-summary 
+
+SUCURSAL C2
+--------------------
+enable
+conf ter
+hostname C2
+interface fa 0/0
+no sh
+interface se 0/0/0
+ip address 20.10.0.1 255.255.255.252
+no sh
+interface se0/0/1
+ip address 172.20.0.2 255.255.0.0
+no sh 
+interface se 0/1/0
+ip address 110.10.0.2 255.255.255.252
+no sh
+
+router eigrp 1
+ network 152.10.0.0 0.0.255.255
+ network 20.10.0.0 0.0.0.3
+ network 172.20.0.0 0.0.255.255
+ network 110.10.0.0  0.0.0.3
+no auto-summary 
+
+
+SUCURSAL C3
+--------------------
+enable
+conf ter
+hostname C3
+interface fa 0/0
+no sh
+interface se 0/0/0
+ip address 20.10.0.2 255.255.255.252
+no sh
+interface se0/0/1
+ip address 30.10.0.1 255.255.255.252
+no sh 
+interface se0/1/0
+ip address 128.30.0.2 255.255.0.0
+no sh
+
+router eigrp 1
+ network 195.160.0.0 0.0.0.255
+ network 20.10.0.0 0.0.0.3
+ network 30.10.0.0 0.0.0.3
+ network 128.30.0.0 0.0.255.255
+no auto-summary 
+
+SUCURSAL C4
+--------------------
+enable
+conf ter
+hostname C4
+interface fa 0/0
+no sh
+interface se 0/0/0
+ip address 172.10.0.2 255.255.0.0
+no sh
+interface se0/0/1
+ip address 30.10.0.2 255.255.255.252
+no sh 
+interface se0/1/0
+ip address 198.30.0.2 255.255.255.0
+no sh 
+
+router eigrp 1
+ network 120.0.0.0 0.255.255.255
+ network 172.10.0.0 0.0.255.255
+ network 30.10.0.0 0.0.0.3
+ network 198.30.0.0 0.0.0.255
+no auto-summary 

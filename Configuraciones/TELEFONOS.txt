@@ -1,0 +1,140 @@
+TELEFONOS-A3
+-----------------------
+enable
+configure terminal
+telephony-service
+ max-ephones 20
+ max-dn 50
+ ip source-address 198.20.0.1 port 2000
+ auto assign 1 to 20
+ephone-dn 1
+ number 1001
+ephone-dn 2
+ number 1002
+ephone-dn 3
+ number 1003
+dial-peer voice 10 voip
+ destination-pattern 2... 
+ session target ipv4:135.20.0.1
+dial-peer voice 30 voip
+ destination-pattern 3...
+ session target ipv4:160.10.0.1
+dial-peer voice 40 voip
+ destination-pattern 4... 
+ session target ipv4:90.0.0.1
+dial-peer voice 50 voip
+ destination-pattern 5... 
+ session target ipv4:195.160.0.1
+
+TELEFONOS A4
+--------------------------
+enable
+configure terminal
+telephony-service
+ max-ephones 20
+ max-dn 5
+ ip source-address 135.20.0.1 port 2000
+ auto assign 1 to 2
+ephone-dn 1
+ number 2001
+ephone-dn 2
+ number 2002
+dial-peer voice 20 voip
+ destination-pattern 1... 
+ session target ipv4:198.20.0.1
+dial-peer voice 30 voip
+ destination-pattern 3...
+ session target ipv4:160.10.0.1
+dial-peer voice 40 voip
+ destination-pattern 4... 
+ session target ipv4:90.0.0.1
+dial-peer voice 50 voip
+ destination-pattern 5... 
+ session target ipv4:195.160.0.1
+
+
+TELEFONOS-B1
+-----------------------
+enable
+conf ter
+telephony-service
+ max-ephones 2
+ max-dn 2
+ip source-address 160.10.0.1 port 2000
+auto assign 1 to 2
+ephone-dn 1
+ number 3001
+dial-peer voice 10 voip
+ destination-pattern 1...
+ session target ipv4:198.20.0.1
+dial-peer voice 20 voip
+ destination-pattern 2... 
+ session target ipv4:135.20.0.1
+dial-peer voice 40 voip
+ destination-pattern 4... 
+ session target ipv4:90.0.0.1
+dial-peer voice 50 voip
+ destination-pattern 5... 
+ session target ipv4:195.160.0.1
+
+TELEFONOS-C1
+-----------------------
+enable
+conf ter
+telephony-service
+max-ephones 15
+ max-dn 15
+ ip source-address 90.0.0.1 port 2000
+ auto assign 1 to 15
+ephone-dn 1
+ number 4001
+ephone-dn 2
+ number 4002
+ephone-dn 3
+ number 4003
+dial-peer voice 10 voip
+ destination-pattern 5... 
+ session target ipv4:195.160.0.1
+dial-peer voice 30 voip
+ destination-pattern 3...
+ session target ipv4:160.10.0.1
+dial-peer voice 40 voip
+ destination-pattern 1...
+ session target ipv4:198.20.0.1
+dial-peer voice 50 voip
+ destination-pattern 2... 
+ session target ipv4:135.20.0.1
+
+TELEFONOS-C3
+-----------------------
+enable
+conf ter
+telephony-service
+max-ephones 15
+ max-dn 15
+ ip source-address 195.160.0.1 port 2000
+ auto assign 1 to 15
+ephone-dn 1
+ number 5001
+ephone-dn 2
+ number 5002
+ephone-dn 3
+ number 5003
+dial-peer voice 10 voip
+ destination-pattern 4... 
+ session target ipv4:90.0.0.1
+dial-peer voice 30 voip
+ destination-pattern 3...
+ session target ipv4:160.10.0.1
+dial-peer voice 40 voip
+ destination-pattern 1...
+ session target ipv4:198.20.0.1
+dial-peer voice 50 voip
+ destination-pattern 2... 
+ session target ipv4:135.20.0.1
+
+
+ 
+
+
+

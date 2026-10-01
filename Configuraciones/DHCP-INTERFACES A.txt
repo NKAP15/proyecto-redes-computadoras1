@@ -1,0 +1,302 @@
+ DHCP A1
+------------------------------------------
+interface FastEthernet0/0.10
+encapsulation dot1Q 10
+ip address 198.10.0.1 255.255.255.128
+no shutdown
+
+interface FastEthernet0/0.20
+encapsulation dot1Q 20
+ip address 198.10.0.129 255.255.255.192
+no shutdown
+
+interface FastEthernet0/0.30
+encapsulation dot1Q 30
+ip address 198.10.0.193 255.255.255.224
+no shutdown
+
+interface FastEthernet0/0.40
+encapsulation dot1Q 40
+ip address 198.10.0.225 255.255.255.240
+no shutdown
+
+interface FastEthernet0/0.50
+encapsulation dot1Q 50
+ip address 198.10.0.241 255.255.255.248
+no shutdown
+
+ip dhcp pool Operaciones
+network 198.10.0.0 255.255.255.128
+default-router 198.10.0.1
+dns-server 198.10.0.2
+ip dhcp excluded-address 198.10.0.1 198.10.0.5
+
+ip dhcp pool Ventas
+network 198.10.0.128 255.255.255.192
+default-router 198.10.0.129
+dns-server 198.10.0.130
+ip dhcp excluded-address 198.10.0.129 198.10.0.133
+
+ip dhcp pool Cajas
+network 198.10.0.192 255.255.255.224
+default-router 198.10.0.193
+dns-server 198.10.0.194
+ip dhcp excluded-address 198.10.0.193 198.10.0.197
+
+ip dhcp pool Sistemas
+network 198.10.0.224 255.255.255.240
+default-router 198.10.0.225
+dns-server 198.10.0.226
+ip dhcp excluded-address 198.10.0.225 198.10.0.229
+
+ip dhcp pool Contabilidad
+network 198.10.0.240 255.255.255.248
+default-router 198.10.0.241
+dns-server 198.10.0.242 
+ip dhcp excluded-address 198.10.0.241 198.10.0.243
+
+ DHCP A2
+------------------------------------------
+interface FastEthernet0/0.10
+encapsulation dot1Q 10
+ip address 135.10.0.1 255.255.224.0
+no shutdown
+
+interface FastEthernet0/0.20
+encapsulation dot1Q 20
+ip address 135.10.32.1 255.255.240.0
+no shutdown
+
+interface FastEthernet0/0.30
+encapsulation dot1Q 30
+ip address 135.10.48.1 255.255.248.0
+no shutdown
+
+interface FastEthernet0/0.40
+encapsulation dot1Q 40
+ip address 135.10.56.1 255.255.254.0
+no shutdown
+
+interface FastEthernet0/0.50
+encapsulation dot1Q 50
+ip address 135.10.58.1 255.255.255.0
+no shutdown
+
+interface FastEthernet0/0.60
+encapsulation dot1Q 60
+ip address 135.10.59.1 255.255.255.128
+no shutdown
+
+interface FastEthernet0/0.70
+encapsulation dot1Q 70
+ip address 135.10.59.129 255.255.255.224
+no shutdown
+
+interface FastEthernet0/0.80
+encapsulation dot1Q 80
+ip address 135.10.59.161 255.255.255.248
+no shutdown
+
+ip dhcp pool Area1
+network 135.10.0.0 255.255.224.0
+default-router 135.10.0.1
+dns-server 135.10.0.2
+ip dhcp excluded-address 135.10.0.1 135.10.0.4
+
+ip dhcp pool Area6
+network 135.10.32.0 255.255.240.0
+default-router 135.10.32.1
+dns-server 135.10.32.2
+ip dhcp excluded-address 135.10.32.1 135.10.32.4
+
+ip dhcp pool Area3
+network 135.10.48.0 255.255.248.0
+default-router 135.10.48.1
+dns-server 135.10.48.2
+ip dhcp excluded-address 135.10.48.1 135.10.48.4
+
+ip dhcp pool Area4
+network 135.10.56.0 255.255.254.0
+default-router 135.10.56.1
+dns-server 135.10.56.2
+ip dhcp excluded-address 135.10.56.1 135.10.56.4
+
+ip dhcp pool Area8
+network 135.10.58.0 255.255.255.0
+default-router 135.10.58.1
+dns-server 135.10.58.2
+ip dhcp excluded-address 135.10.58.1 135.10.58.4
+
+ip dhcp pool Area2
+network 135.10.59.0 255.255.255.128
+default-router 135.10.59.1
+dns-server 135.10.59.2
+ip dhcp excluded-address 135.10.59.1 135.10.59.4
+
+ip dhcp pool Area7
+network 135.10.59.128 255.255.255.224
+default-router 135.10.59.129
+dns-server 135.10.59.130
+ip dhcp excluded-address 135.10.59.129 135.10.59.132
+
+ip dhcp pool Area5
+network 135.10.59.160 255.255.255.248
+default-router 135.10.59.161
+dns-server 135.10.59.162
+ip dhcp excluded-address 135.10.59.161 135.10.59.163
+
+DHCP A3
+---------------------------------
+interface FastEthernet0/0.10
+encapsulation dot1Q 10
+ip address 198.20.0.1 255.255.255.224
+no shutdown
+interface FastEthernet0/0.15
+encapsulation dot1Q 15
+ip address 198.20.0.33 255.255.255.224
+no shutdown
+
+interface FastEthernet0/0.20
+encapsulation dot1Q 20
+ip address 198.20.0.65 255.255.255.224
+no shutdown
+interface FastEthernet0/0.25
+encapsulation dot1Q 25
+ip address 198.20.0.97 255.255.255.224
+no shutdown
+
+interface FastEthernet0/0.30
+encapsulation dot1Q 30
+ip address 198.20.0.129 255.255.255.224
+no shutdown
+interface FastEthernet0/0.35
+encapsulation dot1Q 35
+ip address 198.20.0.161 255.255.255.224
+no shutdown
+
+interface FastEthernet0/0.40
+encapsulation dot1Q 40
+ip address 198.20.0.193 255.255.255.224
+no shutdown
+interface FastEthernet0/0.45
+encapsulation dot1Q 45
+ip address 198.20.0.225 255.255.255.224
+no shutdown
+
+
+ip dhcp pool Dpto1
+network 198.20.0.0 255.255.255.224
+default-router 198.20.0.1
+dns-server 198.20.0.2
+option 150 ip 198.20.0.1
+ip dhcp pool Voz1
+network 198.20.0.32 255.255.255.224
+default-router 198.20.0.33
+dns-server 198.20.0.34
+option 150 ip 198.20.0.33
+ip dhcp excluded-address 198.20.0.1 198.20.0.4
+ip dhcp excluded-address 198.20.0.33 198.20.0.34
+
+ip dhcp pool Dpto2
+network 198.20.0.64 255.255.255.224
+default-router 198.20.0.65
+dns-server 198.20.0.66
+option 150 ip 198.20.0.65
+ip dhcp pool Voz2
+network 198.20.0.96 255.255.255.224
+default-router 198.20.0.97
+dns-server 198.20.0.98
+option 150 ip 198.20.0.97
+ip dhcp excluded-address 198.20.0.65 198.20.0.69
+ip dhcp excluded-address 198.20.0.97 198.20.0.99
+
+ip dhcp pool Dpto3
+network 198.20.0.128 255.255.255.224
+default-router 198.20.0.129
+dns-server 198.20.0.130
+option 150 ip 198.20.0.129
+ip dhcp pool Voz3
+network 198.20.0.160 255.255.255.224
+default-router 198.20.0.161
+dns-server 198.20.0.162
+option 150 ip 198.20.0.161
+ip dhcp excluded-address 198.20.0.129 198.20.0.134
+ip dhcp excluded-address 198.20.0.161 198.20.0.164
+
+ip dhcp pool Dpto4
+network 198.20.0.192 255.255.255.224
+default-router 198.20.0.193
+dns-server 198.20.0.194
+option 150 ip 198.20.0.193
+ip dhcp pool Voz4
+network 198.20.0.224 255.255.255.224
+default-router 198.20.0.225
+dns-server 198.20.0.226
+option 150 ip 198.20.0.225
+ip dhcp excluded-address 198.20.0.193 198.20.0.199
+ip dhcp excluded-address 198.20.0.225 198.20.0.229
+
+DHCP A4
+---------------------------------
+interface FastEthernet0/0.10
+encapsulation dot1Q 10
+ip address 135.20.0.1 255.255.224.0
+no shutdown
+interface FastEthernet0/0.15
+encapsulation dot1Q 15
+ip address  135.20.32.1 255.255.224.0
+no shutdown
+
+interface FastEthernet0/0.20
+encapsulation dot1Q 20
+ip address 135.20.64.1 255.255.224.0
+no shutdown
+
+interface FastEthernet0/0.30
+encapsulation dot1Q 30
+ip address 135.20.96.1 255.255.224.0
+no shutdown
+
+interface FastEthernet0/0.40
+encapsulation dot1Q 40
+ip address 135.20.128.1 255.255.224.0
+no shutdown
+interface FastEthernet0/0.45
+encapsulation dot1Q 45
+ip address 135.20.160.1 255.255.224.0
+no shutdown
+
+ip dhcp pool Dpto1
+network 135.20.0.0 255.255.224.0
+default-router 135.20.0.1
+dns-server 135.20.0.2
+option 150 ip 135.20.0.1
+ip dhcp pool Voz1
+network 135.20.32.0 255.255.224.0
+default-router 135.20.32.1
+dns-server 135.20.32.2
+option 150 ip 135.20.32.1
+ip dhcp excluded-address 135.20.0.1 135.20.0.4
+ip dhcp excluded-address 135.20.32.1 135.20.32.4
+
+ip dhcp pool Dpto2
+network 135.20.64.0 255.255.224.0
+default-router 135.20.64.1
+dns-server 135.20.64.2
+ip dhcp excluded-address 135.20.64.1 135.20.64.4
+
+ip dhcp pool Dpto4
+network 135.20.128.0 255.255.224.0
+default-router 135.20.128.1
+dns-server 135.20.128.2
+option 150 ip 135.20.128.1
+ip dhcp pool Voz4
+network 135.20.160.0 255.255.224.0
+default-router 135.20.160.1
+dns-server 135.20.160.2
+option 150 ip 135.20.160.1
+ip dhcp excluded-address 135.20.128.1 135.128.0.4
+ip dhcp excluded-address 135.20.160.1 135.20.160.4
+
+
+

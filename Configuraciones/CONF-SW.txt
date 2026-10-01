@@ -1,0 +1,537 @@
+SWA1
+----------------------------------
+enable
+configure terminal
+
+vlan 10
+name Operaciones
+interface range fa 0/1-5
+sw mode access
+sw access vlan 10
+
+vlan 20
+name Ventas
+interface range fa 0/6-9
+sw mode access
+sw access vlan 20
+
+vlan 30
+name Cajas
+interface range fa 0/10-14
+sw mode access
+sw access vlan 30
+
+vlan 40
+name Sistemas
+interface range fa 0/15-19
+sw mode access
+sw access vlan 40
+
+vlan 50
+name Contabilidad
+interface range fa 0/20-24
+sw mode access
+sw access vlan 50
+
+interface gi 0/1
+sw mode trunk
+
+SWA2
+----------------------------------                                                                                                                              
+enable
+configure terminal
+
+vlan 10
+name Area1
+interface range fa 0/1-3
+sw mode access
+sw access vlan 10
+
+vlan 20
+name Area6
+interface range fa 0/4-6
+sw mode access
+sw access vlan 20
+
+vlan 30
+name Area3
+interface range fa 0/7-9
+sw mode access
+sw access vlan 30
+
+vlan 40
+name Area4
+interface range fa 0/10-12
+sw mode access
+sw access vlan 40
+
+vlan 50
+name Area8
+interface range fa 0/13-15
+sw mode access
+sw access vlan 50
+
+vlan 60
+name Area2
+interface range fa 0/16-18
+sw mode access
+sw access vlan 60
+
+vlan 70
+name Area7
+interface range fa 0/19-21
+sw mode access
+sw access vlan 70
+
+vlan 80
+name Area5
+interface range fa 0/22-24
+sw mode access
+sw access vlan 80
+interface gi 0/1
+sw mode trunk
+
+SWA3
+-------------------------------
+enable
+conf term
+hostname SWA3
+vlan 10
+name Dpto1
+vlan 15
+name Voz1
+interface range fa 0/1-6
+sw mode access
+sw access vlan 10
+sw voice vlan 15
+no sh
+
+vlan 20
+name Dpto2
+vlan 25
+name Voz2
+interface range fa 0/7-12
+sw mode access
+sw access vlan 20
+sw voice vlan 25
+no sh
+
+vlan 30
+name Dpto3
+vlan 35
+name Voz3
+interface range fa 0/13-18
+sw mode access
+sw access vlan 30
+sw voice vlan 35
+no sh
+
+vlan 40
+name Dpto4
+vlan 45
+name Voz4
+interface range fa 0/19-24
+sw mode access
+sw access vlan 40
+sw voice vlan 45
+no sh
+interface range gi 0/1
+sw mode trunk
+no sh
+
+SWA4
+-------------------------------
+enable
+conf term
+hostname SWA4
+vlan 10
+name Dpto1
+vlan 15
+name Voz1
+interface range fa 0/1-6
+sw mode access
+sw access vlan 10
+sw voice vlan 15
+no sh
+
+vlan 20
+name Dpto2
+interface range fa 0/7-12
+sw mode access
+sw access vlan 20
+no sh
+
+vlan 30
+name Dpto3
+interface range fa 0/13-18
+sw mode access
+sw access vlan 30
+no sh
+
+vlan 40
+name Dpto4
+vlan 45
+name Voz4
+interface range fa 0/19-24
+sw mode access
+sw access vlan 40
+sw voice vlan 45
+no sh
+interface range gi 0/1
+sw mode trunk
+no sh
+
+SWB1
+----------------------------------
+enable
+configure terminal
+
+vlan 10
+name Departamento1
+vlan 15
+name Voz1
+interface range fa 0/1-20
+sw mode access
+sw access vlan 10
+sw voice vlan 15
+no sh
+
+interface range gi 0/1
+sw mode trunk
+no sh
+
+SWB3
+----------------------------------
+enable
+configure terminal
+
+vlan 10
+name Area1
+interface range fa 0/1-3
+sw mode access
+sw access vlan 10
+
+vlan 20
+name Area2
+interface range fa 0/4-6
+sw mode access
+sw access vlan 20
+
+vlan 30
+name Area3
+interface range fa 0/7-9
+sw mode access
+sw access vlan 30
+
+vlan 40
+name Area4
+interface range fa 0/10-13
+sw mode access
+sw access vlan 40
+
+vlan 50
+name Area5
+interface range fa 0/14-17
+sw mode access
+sw access vlan 50
+
+vlan 60
+name Area6
+interface range fa 0/18-21
+sw mode access
+sw access vlan 60
+
+vlan 70
+name Area7
+interface range fa 0/21-24
+sw mode access
+sw access vlan 70
+
+interface gi 0/1
+sw mode trunk
+
+SWB4
+-------------------
+enable
+conf term
+hostname SWB4
+
+vlan 1
+name Dpto1
+interface range fa0/1-2
+switchport mode access
+switchport access vlan 1
+
+vlan 2
+name Dpto2
+interface range fa0/3-4
+switchport mode access
+switchport access vlan 2
+
+vlan 3
+name Dpto3
+interface range fa0/5-6
+switchport mode access
+switchport access vlan 3
+
+vlan 4
+name Dpto4
+interface range fa0/7-8
+switchport mode access
+switchport access vlan 4
+
+vlan 5
+name Dpto5
+interface range fa0/9-10
+switchport mode access
+switchport access vlan 5
+
+vlan 6
+name Dpto6
+interface range fa0/11-12
+switchport mode access
+switchport access vlan 6
+
+vlan 7
+name Dpto7
+interface range fa0/13-14
+switchport mode access
+switchport access vlan 7
+
+vlan 8
+name Dpto8
+interface range fa0/15-16
+switchport mode access
+switchport access vlan 8
+
+vlan 9
+name Dpto9
+interface range fa0/17-18
+switchport mode access
+switchport access vlan 9
+
+vlan 10
+name Dpto10
+interface range fa0/19-20
+switchport mode access
+switchport access vlan 10
+vlan 11
+name Dpto11
+interface range fa0/21-22
+switchport mode access
+switchport access vlan 11
+
+vlan 12
+name Dpto12
+interface range fa0/23-24
+switchport mode access
+switchport access vlan 12
+
+interface gi0/1
+switchport mode trunk
+no shut
+
+SWC1
+------------------------------
+enable
+conf term
+hostname SWC1
+
+vlan 10
+name Dpto1
+vlan 15
+name Voz1
+interface range fa0/1-6
+sw mode access
+sw access vlan 10
+sw voice vlan 15
+no sh
+
+vlan 20
+name Dpto2
+vlan 25
+name Voz2
+interface range fa0/7-12
+sw mode access
+sw access vlan 20
+sw voice vlan 25
+no sh
+
+vlan 30
+name Dpto3
+vlan 35
+name Voz3
+interface range fa0/13-18
+sw mode access
+sw access vlan 30
+sw voice vlan 35
+no sh
+
+vlan 40
+name Dpto4
+vlan 45
+name Voz4
+interface range fa0/19-24
+sw mode access
+sw access vlan 40
+sw voice vlan 45
+no sh
+
+interface gi0/1
+switchport mode trunk
+no shut
+
+SWC2
+------------------------------
+enable
+conf term
+hostname SWC2
+
+vlan 10
+name Dpto1
+interface range fa0/1-4
+switchport mode access
+switchport access vlan 10
+
+vlan 20
+name Dpto2
+interface range fa0/5-8
+switchport mode access
+switchport access vlan 20
+
+vlan 30
+name Dpto3
+interface range fa0/9-12
+switchport mode access
+switchport access vlan 30
+
+vlan 40
+name Dpto4
+interface range fa0/13-16
+switchport mode access
+switchport access vlan 40
+
+vlan 50
+name Dpto5
+interface range fa0/17-20
+switchport mode access
+switchport access vlan 50
+
+vlan 60
+name Dpto6
+interface range fa0/21-24
+switchport mode access
+switchport access vlan 60
+
+interface gi0/1
+switchport mode trunk
+no shut
+
+
+SWC3
+------------------------------
+enable
+conf term
+hostname SWC3
+
+vlan 10
+name Dpto1
+vlan 15
+name Voz1
+interface range fa0/1-6
+switchport mode access
+switchport access vlan 10
+switchport voice vlan 15
+no shutdown
+
+vlan 20
+name Dpto2
+interface range fa0/7-10
+switchport mode access
+switchport access vlan 20
+no shutdown
+
+vlan 30
+name Dpto3
+interface range fa0/11-13
+switchport mode access
+switchport access vlan 30
+no shutdown
+
+vlan 40
+name Dpto4
+vlan 45
+name Voz4
+interface range fa0/14-19
+switchport mode access
+switchport access vlan 40
+switchport voice vlan 45
+no shutdown
+
+vlan 50
+name Dpto5
+vlan 55
+name Voz5
+interface range fa0/20-24
+switchport mode access
+switchport access vlan 50
+switchport voice vlan 55
+no shutdown
+
+interface gi0/1
+switchport mode trunk
+no shutdown
+
+
+
+SWC4
+------------------------------
+vlan 10
+name Area1
+interface range fa0/1-4
+switchport mode access
+switchport access vlan 10
+
+vlan 20
+name Area2
+interface range fa0/5-8
+switchport mode access
+switchport access vlan 20
+
+vlan 30
+name Area3
+interface range fa0/9-12
+switchport mode access
+switchport access vlan 30
+
+vlan 40
+name Area4
+interface range fa0/13-16
+switchport mode access
+switchport access vlan 40
+
+vlan 50
+name Area5
+interface range fa0/17-20
+switchport mode access
+switchport access vlan 50
+
+vlan 60
+name Area6
+interface range fa0/21-22
+switchport mode access
+switchport access vlan 60
+
+vlan 70
+name Area7
+interface range fa0/23-24
+switchport mode access
+switchport access vlan 70
+
+interface gi0/1
+switchport mode trunk
+no shut
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                          

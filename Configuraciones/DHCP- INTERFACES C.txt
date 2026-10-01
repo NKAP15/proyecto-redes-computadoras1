@@ -1,0 +1,347 @@
+DHCP C1
+------------------------------------------
+
+interface fa 0/0.10
+encapsulation dot1Q 10
+ip address 90.0.0.1 255.255.224.0
+no shut
+
+interface fa 0/0.15
+encapsulation dot1Q 15
+ip address 90.32.0.1 255.255.224.0
+no shut
+
+interface fa 0/0.20
+encapsulation dot1Q 20
+ip address 90.64.0.1 255.255.224.0
+no shut
+
+interface fa 0/0.25
+encapsulation dot1Q 25
+ip address 90.96.0.1 255.255.224.0
+no shut
+
+interface fa 0/0.30
+encapsulation dot1Q 30
+ip address 90.128.0.1 255.255.224.0
+no shut
+
+interface fa 0/0.35
+encapsulation dot1Q 35
+ip address 90.160.0.1 255.255.224.0
+no shut
+
+interface fa 0/0.40
+encapsulation dot1Q 40
+ip address 90.192.0.1 255.255.224.0
+no shut
+
+interface fa 0/0.45
+encapsulation dot1Q 45
+ip address 90.224.0.1 255.255.224.0
+no shut
+
+ip dhcp pool Dpto1
+ network 90.0.0.0 255.255.224.0
+ default-router 90.0.0.1
+ dns-server 90.0.0.2
+option 150 ip 90.0.0.1
+ip dhcp excluded-address 90.0.0.1 90.0.0.9
+
+ip dhcp pool Voz1
+ network 90.32.0.0 255.255.224.0
+ default-router 90.32.0.1
+ dns-server 90.32.0.2
+option 150 ip 90.32.0.1
+ip dhcp excluded-address 90.32.0.1 90.32.0.9
+
+ip dhcp pool Dpto2
+ network 90.64.0.0 255.255.224.0
+ default-router 90.64.0.1
+ dns-server 90.64.0.2
+option 150 ip 90.64.0.1
+ip dhcp excluded-address 90.64.0.1 90.64.0.9
+
+ip dhcp pool Voz2
+ network 90.96.0.0 255.255.224.0
+ default-router 90.96.0.1
+ dns-server 90.96.0.2
+option 150 ip 90.96.0.1
+ip dhcp excluded-address 90.96.0.1 90.96.0.9
+
+ip dhcp pool Dpto3
+ network 90.128.0.0 255.255.224.0
+ default-router 90.128.0.1
+ dns-server 90.128.0.2
+option 150 ip 90.128.0.1
+ip dhcp excluded-address 90.128.0.1 90.128.0.9
+
+ip dhcp pool Voz3
+ network 90.160.0.0 255.255.224.0
+ default-router 90.160.0.1
+ dns-server 90.160.0.2
+option 150 ip 90.160.0.1
+ip dhcp excluded-address 90.160.0.1 90.160.0.9
+
+ip dhcp pool Dpto4
+ network 90.192.0.0 255.255.224.0
+ default-router 90.192.0.1
+ dns-server 90.192.0.2
+option 150 ip 90.192.0.1
+ip dhcp excluded-address 90.192.0.1 90.192.0.9
+
+ip dhcp pool Voz4
+ network 90.224.0.0 255.255.224.0
+ default-router 90.224.0.1
+ dns-server 90.224.0.2
+option 150 ip  90.224.0.1
+ip dhcp excluded-address 90.224.0.1 90.224.0.10
+
+
+DHCP C2
+------------------------------------------
+interface fa 0/0.10
+encapsulation dot1Q 10
+ip address 152.10.96.1 255.255.255.0
+no shut
+
+interface fa 0/0.20
+encapsulation dot1Q 20
+ip address 152.10.97.1 255.255.255.128
+no shut
+
+interface fa 0/0.30
+encapsulation dot1Q 30
+ip address 152.10.0.1 255.255.192.0
+no shut
+
+interface fa 0/0.40
+encapsulation dot1Q 40
+ip address 152.10.97.129 255.255.255.192
+no shut
+
+interface fa 0/0.50
+encapsulation dot1Q 50
+ip address 152.10.64.1 255.255.224.0
+no shut
+
+interface fa 0/0.60
+encapsulation dot1Q 60
+ip address 152.10.97.193 255.255.255.248
+no shut
+
+ip dhcp pool Dpto1
+ network 152.10.96.0 255.255.255.0
+ default-router 152.10.96.1
+ dns-server 152.10.96.2
+ip dhcp excluded-address 152.10.96.1 152.10.96.9
+
+ip dhcp pool Dpto2
+ network 152.10.97.0 255.255.255.128
+ default-router 152.10.97.1
+ dns-server 152.10.97.2
+ip dhcp excluded-address 152.10.97.1 152.10.97.9
+
+ip dhcp pool Dpto3
+ network 152.10.0.0 255.255.192.0
+ default-router 152.10.0.1
+ dns-server 152.10.0.2
+ip dhcp excluded-address 152.10.0.1 152.10.0.9
+
+ip dhcp pool Dpto4
+ network 152.10.97.128 255.255.255.192
+ default-router 152.10.97.129
+ dns-server 152.10.97.130
+ip dhcp excluded-address 152.10.97.129 152.10.97.139
+
+ip dhcp pool Dpto5
+ network 152.10.64.0 255.255.224.0
+ default-router 152.10.64.1
+ dns-server 152.10.64.2
+ip dhcp excluded-address 152.10.64.1 152.10.64.9
+
+ip dhcp pool Dpto6
+ network 152.10.97.192 255.255.255.248
+ default-router 152.10.97.193
+ dns-server 152.10.97.194
+ip dhcp excluded-address 152.10.97.193 152.10.97.194
+
+DHCP C3
+------------------------------------------
+interface fa0/0.10
+encapsulation dot1Q 10
+ip address 195.160.0.1 255.255.255.224
+no shutdown
+
+interface fa0/0.15
+encapsulation dot1Q 15
+ip address 195.160.0.33 255.255.255.224
+no shutdown
+
+interface fa0/0.20
+encapsulation dot1Q 20
+ip address 195.160.0.65 255.255.255.224
+no shutdown
+
+interface fa0/0.30
+encapsulation dot1Q 30
+ip address 195.160.0.97 255.255.255.224
+no shutdown
+
+interface fa0/0.40
+encapsulation dot1Q 40
+ip address 195.160.0.129 255.255.255.224
+no shutdown
+
+interface fa0/0.45
+encapsulation dot1Q 45
+ip address 195.160.0.161 255.255.255.224
+no shutdown
+
+interface fa0/0.50
+encapsulation dot1Q 50
+ip address 195.160.0.193 255.255.255.224
+no shutdown
+
+interface fa0/0.55
+encapsulation dot1Q 55
+ip address 195.160.0.225 255.255.255.224
+no shutdown
+
+ip dhcp pool Dpto1
+ network 195.160.0.0 255.255.255.224
+ default-router 195.160.0.1
+ dns-server 195.160.0.2
+option 150 ip 195.160.0.1
+ip dhcp excluded-address 195.160.0.1 195.160.0.9
+
+ip dhcp pool Voz1
+ network 195.160.0.32 255.255.255.224
+ default-router 195.160.0.33
+ dns-server 195.160.0.34
+option 150 ip 195.160.0.33
+ip dhcp excluded-address 195.160.0.33 195.160.0.39
+
+ip dhcp pool Dpto2
+ network 195.160.0.64 255.255.255.224
+ default-router 195.160.0.65
+ dns-server 195.160.0.66
+ip dhcp excluded-address 195.160.0.65 195.160.0.69
+
+ip dhcp pool Dpto3
+ network 195.160.0.96 255.255.255.224
+ default-router 195.160.0.97
+ dns-server 195.160.0.98
+ip dhcp excluded-address 195.160.0.97 195.160.0.99
+
+ip dhcp pool Dpto4
+ network 195.160.0.128 255.255.255.224
+ default-router 195.160.0.129
+ dns-server 195.160.0.130
+option 150 ip 195.160.0.129
+ip dhcp excluded-address 195.160.0.129 195.160.0.134
+
+ip dhcp pool Voz4
+ network 195.160.0.160 255.255.255.224
+ default-router 195.160.0.161
+ dns-server 195.160.0.162
+option 150 ip 195.160.0.161
+ip dhcp excluded-address 195.160.0.161 195.160.0.164
+
+ip dhcp pool Dpto5
+ network 195.160.0.192 255.255.255.224
+ default-router 195.160.0.193
+ dns-server 195.160.0.194
+option 150 ip 195.160.0.193
+ip dhcp excluded-address 195.160.0.193 195.160.0.199
+
+ip dhcp pool Voz5
+ network 195.160.0.224 255.255.255.224
+ default-router 195.160.0.225
+ dns-server 195.160.0.226
+option 150 ip 195.160.0.225
+ip dhcp excluded-address 195.160.0.225 195.160.0.229
+
+
+DHCP C4
+------------------------------------------
+interface fa 0/0.10
+encapsulation dot1Q 10
+ip address 120.0.0.1 255.254.0.0
+no shut
+
+interface fa 0/0.20
+encapsulation dot1Q 20
+ip address 120.2.7.129 255.255.255.192
+no shut
+
+interface fa 0/0.30
+encapsulation dot1Q 30
+ip address 120.2.6.1 255.255.255.0
+no shut
+
+interface fa 0/0.40
+encapsulation dot1Q 40
+ip address 120.2.7.193 255.255.255.248
+no shut
+
+interface fa 0/0.50
+encapsulation dot1Q 50
+ip address 120.2.4.1 255.255.254.0
+no shut
+
+interface fa 0/0.60
+encapsulation dot1Q 60
+ip address 120.2.7.1 255.255.255.128
+no shut
+
+interface fa 0/0.70
+encapsulation dot1Q 70
+ip address 120.2.0.1 255.255.252.0
+no shut
+
+ip dhcp pool Area1
+ network 120.0.0.0 255.254.0.0
+ default-router 120.0.0.1
+ dns-server 120.0.0.2
+ip dhcp excluded-address 120.0.0.1 120.0.0.10
+
+ip dhcp pool Area2
+ network 120.2.7.128 255.255.255.192
+ default-router 120.2.7.129
+ dns-server 120.2.7.130
+ip dhcp excluded-address 120.2.7.129 120.2.7.130
+
+ip dhcp pool Area3
+ network 120.2.6.0 255.255.255.0
+ default-router 120.2.6.1
+ dns-server 120.2.6.2
+ip dhcp excluded-address 120.2.6.1 120.2.6.10
+
+ip dhcp pool Area4
+ network 120.2.7.192 255.255.255.248
+ default-router 120.2.7.193
+ dns-server 120.2.7.194
+ip dhcp excluded-address 120.2.7.193 120.2.7.194
+
+ip dhcp pool Area5
+ network 120.2.4.0 255.255.254.0
+ default-router 120.2.4.1
+ dns-server 120.2.4.2
+ip dhcp excluded-address 120.2.4.1 120.2.4.10
+
+ip dhcp pool Area6
+ network 120.2.7.0 255.255.255.128
+ default-router 120.2.7.1
+ dns-server 120.2.7.2
+ip dhcp excluded-address 120.2.7.1 120.2.7.10
+
+ip dhcp pool Area7
+ network 120.2.0.0 255.255.252.0
+ default-router 120.2.0.1
+ dns-server 120.2.0.2
+ip dhcp excluded-address 120.2.0.1 120.2.0.10
+
+
+
+

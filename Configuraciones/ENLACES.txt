@@ -1,0 +1,63 @@
+ ENLACE AB
+---------------
+enable
+conf ter
+hostname AB
+interface se 0/0/0
+ip address 128.30.0.1 255.255.255.252
+no sh
+interface se0/0/1
+ip address 198.30.0.1 255.255.255.0
+no sh 
+interface se 0/1/1
+ip address 128.40.0.1 255.255.0.0
+no sh
+interface se0/1/0
+ip address 198.40.0.1 255.255.255.0
+no sh 
+
+router eigrp 1
+ redistribute rip metric 10000 100 255 1 1500
+ network 128.30.0.0 0.0.255.255
+ network 198.30.0.0 0.0.0.255
+ no auto-summary
+
+router rip
+ version 2
+ redistribute eigrp 1 metric 1
+ network 128.40.0.0
+ network 198.40.0.0
+
+ENLACE BC
+---------------
+enable
+conf ter
+hostname BC
+interface se 0/0/0
+ip address 110.0.0.1 255.255.255.252
+no sh
+interface se0/0/1
+ip address 190.10.0.1 255.255.255.0
+no sh 
+interface se0/1/0
+ip address 190.20.0.1 255.255.255.0
+no sh 
+interface se 0/1/1
+ip address 110.10.0.1 255.255.255.252
+no sh
+
+router eigrp 1
+ network 190.20.0.0 0.0.0.255
+ network 110.10.0.0 0.0.0.3
+ redistribute rip metric 10000 100 255 1 1500
+
+router rip
+ version 2
+ redistribute eigrp 1 metric 1
+ network 110.0.0.0 
+ network 190.10.0.0 
+
+
+
+
+

@@ -1,0 +1,99 @@
+PROYECTO FINAL
+
+SUCURSAL B1
+--------------------
+enable
+conf ter
+hostname B1
+interface fa 0/0
+no sh
+interface se 0/0/0
+ip address 10.10.0.1 255.255.255.252
+no sh
+interface se0/0/1
+ip address 10.20.0.1 255.255.255.252
+no sh 
+interface se0/1/0
+ip address 198.40.0.2 255.255.255.0
+no sh 
+
+router rip
+ version 2
+ network 160.10.0.0
+ network 10.10.0.0
+ network 10.20.0.0
+ network 198.40.0.0
+
+SUCURSAL B2
+--------------------
+enable
+conf ter
+hostname B2
+interface fa 0/0
+no sh
+interface se 0/0/0
+ip address 162.10.0.1 255.255.0.0
+no sh
+interface se0/0/1
+ip address 10.10.0.2 255.255.255.252
+no sh 
+interface se 0/1/1
+ip address 128.40.0.2 255.255.0.0
+no sh
+
+router rip
+ version 2
+ network 192.168.10.0
+ network 162.10.0.0
+ network 10.10.0.0
+ network 128.40.0.0
+
+SUCURSAL B3
+--------------------
+enable
+conf ter
+hostname B3
+interface fa 0/0
+no sh
+interface se 0/0/0
+ip address 10.10.0.2 255.255.255.252
+no sh
+interface se0/0/1
+ip address 200.100.0.1 255.255.255.0
+no sh 
+interface se0/1/0
+ip address 110.0.0.2 255.255.255.252
+no sh
+
+
+router rip
+ version 2
+ network 132.0.0.0
+ network 10.10.0.0
+ network 200.100.0.0
+ network 110.0.0.0
+
+
+SUCURSAL B4
+--------------------
+enable
+conf ter
+hostname B4
+interface fa 0/0
+no sh
+interface se 0/0/0
+ip address 162.10.0.2 255.255.0.0
+no sh
+interface se0/0/1
+ip address 200.100.0.2 255.255.255.0
+no sh 
+interface se0/1/0
+ip address 190.10.0.2 255.255.255.0
+no sh 
+
+router rip
+ version 2
+ network 100.0.0.0
+ network 162.10.0.0
+ network 200.100.0.0
+ network 190.10.0.0
